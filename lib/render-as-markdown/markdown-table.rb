@@ -2,7 +2,7 @@ module RenderAsMarkdown
   class Table
 
     attr_accessor :columns, :rows
-    
+
     def initialize column_titles = []
       @columns = column_titles.map{|title| Column.new title}
       @rows = []
@@ -13,7 +13,7 @@ module RenderAsMarkdown
 
       # add row to rows
       @rows << row
-      
+
       # iterate through columns and row, add each row to their column
       @columns.zip(row).each {|col, string| col.add_row string}
     end
@@ -23,7 +23,7 @@ module RenderAsMarkdown
     def render
       # join all column headers
       table = @columns.map(&:render_title).join( '|' ) << "\n"
-      
+
       # join all column lines
       table << @columns.map(&:render_line).join( '|' ) << "\n"
 
@@ -31,13 +31,11 @@ module RenderAsMarkdown
       @rows.each_with_index do |row, i|
         table << @columns.map {|col| col.render_row i}.join( '|' ) << "\n"
       end
-      
+
       # return table
       table
     end
-
   end
-
 
 
   class Column
@@ -63,14 +61,14 @@ module RenderAsMarkdown
     end
 
     def add_row string
-      self.rows << string 
+      self.rows << string
       self.update_width string.length
     end
 
     def update_width length
       @width = length if @width < length
     end
-    
+
   end
-  
+
 end
