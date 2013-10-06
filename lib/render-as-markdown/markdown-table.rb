@@ -43,9 +43,9 @@ module RenderAsMarkdown
     attr_accessor :title, :width, :rows
 
     def initialize title
-      self.rows = []
-      self.title = title
-      self.width = title.length
+      @rows = []
+      @title = title
+      @width = title.to_s.length
     end
 
     def render_title
@@ -61,8 +61,9 @@ module RenderAsMarkdown
     end
 
     def add_row string
-      self.rows << string
-      self.update_width string.length
+      string ||= ''
+      @rows << string
+      update_width string.to_s.length
     end
 
     def update_width length
