@@ -12,10 +12,11 @@ Gem::Specification.new do |gem|
     It works perfectly fine, but is not fully featured yet.
     }
   gem.homepage      = "https://github.com/rmetzler/render-as-markdown"
+  gem.license       = "MIT"
 
   gem.name          = "render-as-markdown"
   gem.require_paths = ["lib"]
-  gem.version       = RENDER_AS_MARKDOWN::VERSION
+  gem.version       = RenderAsMarkdown::VERSION
 
   gem.add_development_dependency 'rake'
 
