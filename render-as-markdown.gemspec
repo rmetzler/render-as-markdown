@@ -18,7 +18,9 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = RenderAsMarkdown::VERSION
 
+  gem.add_development_dependency 'bundler'
   gem.add_development_dependency 'rake'
+  gem.add_development_dependency 'sandi_meter'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
