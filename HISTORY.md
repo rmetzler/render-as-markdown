@@ -3,7 +3,8 @@ HISTORY
 
 [2013-10-13]
 - wrote tests (nil, Numbers, etc)
-- wrote classes for H1 and H2
+- wrote classes and tests for H1 and H2 with Markdown underline notation (h1: ===, h2: ----)
+- v0.0.4
 
 [2013-10-06]
 - some bugfixes
