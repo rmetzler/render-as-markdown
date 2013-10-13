@@ -3,19 +3,23 @@ module RenderAsMarkdown
 
     attr_accessor :columns, :rows
 
-    def initialize column_titles = []
-      @columns = column_titles.map{|title| Column.new title}
+    def initialize column_titles
+      # column_titles will be an array
+      @columns = [*column_titles].map{|title| Column.new title}
       @rows = []
     end
 
     def add_row row
       # TODO: ensure element count of row is == element count of columns
 
-      # add row to rows
+      # make row an array
+      row = [*row]
+
+      # add row to rows, use an array
       @rows << row
 
       # iterate through columns and row, add each row to their column
-      @columns.zip(row).each {|col, string| col.add_row string}
+      @columns.zip(row).each {|col, val| col.add_row val.to_s}
     end
 
     alias_method  '<<', :add_row
@@ -44,8 +48,8 @@ module RenderAsMarkdown
 
     def initialize title
       @rows = []
-      @title = title
-      @width = title.to_s.length
+      @title = title.to_s
+      @width = [@title.length, 1].max
     end
 
     def render_title
