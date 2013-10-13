@@ -39,6 +39,9 @@ module RenderAsMarkdown
       # return table
       table
     end
+    
+    alias_method :to_s, :render
+
   end
 
 
