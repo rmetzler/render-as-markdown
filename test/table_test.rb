@@ -3,7 +3,7 @@ require 'minitest_helper'
 # I'm sorry, I concat Ruby strings
 # the reason is: the table ends with spaces
 # and whenever I hit cmd+s, a textmate plugin
-# deletes all trailing spaces
+# deletes all trailing spaces in my file
 
 module RenderAsMarkdown
   class TableTest < MiniTest::Unit::TestCase
