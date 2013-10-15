@@ -13,6 +13,18 @@ Headers in Markdown can be written in two different notations. the #-Notation wh
 And there is the underline Notation for H1 (===) and H2 (---). This notation is easier to scan in ASCII files, but its not as simple to implement in Markdown templates as the #-notation is. So I wrote two little helpers classes.
 
 
+List
+----
+
+Lists in Markdown start with a dash and a space in every line.
+
+
+Code
+----
+
+There are different notations for Code in Markdown. Currently the implementation just indent every line by 4 spaces.
+
+
 Table
 -----
 
