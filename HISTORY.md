@@ -3,9 +3,10 @@ HISTORY
 
 [2012-10-15]
 - added List class
+- added simple Code class with 4 spaces indentation
 
 [2013-10-13]
-- wrote tests (nil, Numbers, etc)
+- wrote tests for Table class and fixed problems (nil, Numbers, etc)
 - wrote classes and tests for H1 and H2 with Markdown underline notation (h1: ===, h2: ----)
 - v0.0.4
 
