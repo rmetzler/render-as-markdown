@@ -1,6 +1,9 @@
 HISTORY
 =======
 
+[2012-10-15]
+- added List class
+
 [2013-10-13]
 - wrote tests (nil, Numbers, etc)
 - wrote classes and tests for H1 and H2 with Markdown underline notation (h1: ===, h2: ----)
