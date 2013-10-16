@@ -5,6 +5,7 @@ HISTORY
 - Readme: what is Markdown?
 - added Link class
 - added Image class
+- renamed files
 
 [2012-10-15]
 - added List class
