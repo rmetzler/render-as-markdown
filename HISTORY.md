@@ -1,6 +1,9 @@
 HISTORY
 =======
 
+[2012-10-16]
+- Readme: what is Markdown?
+
 [2012-10-15]
 - added List class
 - added simple Code class with 4 spaces indentation
