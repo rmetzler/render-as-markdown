@@ -50,7 +50,11 @@ Markdown templates as the #-notation is. So I wrote two little helpers classes.
 
 ### Link
 
-Links in Markdown have a URL and optionally text and hint.
+Links in Markdown have a URL, text (optional) and hint (optional).
+
+### Image
+
+Images in Markdown have a URL, an alt text and a hint (optional).
 
 
 ### List
