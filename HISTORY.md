@@ -3,6 +3,7 @@ HISTORY
 
 [2012-10-16]
 - Readme: what is Markdown?
+- added Link class
 
 [2012-10-15]
 - added List class

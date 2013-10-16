@@ -15,7 +15,7 @@ project documentation files like README.md, TODO.md, LICENSE.md, etc. with it.
 Github is able to render Markdown as HTML so automatically generated project
 documentation could be displayed on http://github.com
 
-See [Implementation](#Implementation) for what's implemented yet.
+See [Implementation](#implementation) for what's implemented yet.
 
 
 What is Markdown?
@@ -46,6 +46,11 @@ You get the concept.
 And there is the underline Notation for H1 (===) and H2 (---). This notation
 is easier to scan in ASCII files, but its not as simple to implement in
 Markdown templates as the #-notation is. So I wrote two little helpers classes.
+
+
+### Link
+
+Links in Markdown have a URL and optionally text and hint.
 
 
 ### List
