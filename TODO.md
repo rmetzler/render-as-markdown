@@ -16,6 +16,7 @@ Option Hash
 -----------
 
 - an option hash could be a good thing to implement http://blog.rlmflores.me/blog/2012/07/16/method-with-options/
+- also splats may be useful http://www.paperplanes.de/2012/2/16/fun-with-ruby-block-parameters.html
 
 
 Ideas for DSL
@@ -30,8 +31,12 @@ Ideas for DSL
 
 ```ruby
 DSL.markdown do |md|
-  md.h1 "This is a title"
-  md.chapter "title for chapter 1" do |c1|
+
+  md.options :link_urls => :as_references, :link_images => true, :toc => true, :auto_numbering => [:h2. :h3]
+  md.meta # date, author (name, email for multiple authors)
+
+  md.h1 "This is the main title"
+  md.chapter "title for chapter 1" do |c1| # put this title in h2, add numbering, add it to TOC
     c1.paragraph "paragraph1"
     c1.img "http://...jpeg"
     c1.list ["item 1", "item2", "item3"]
