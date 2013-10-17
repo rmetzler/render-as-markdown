@@ -1,10 +1,12 @@
 module RenderAsMarkdown
   class Code
 
+    # TODO: render language for code block if provided as Symbol
+    # TODO: add file support
+
     attr_accessor :code
 
     def initialize code
-      # list_items will be an array
       @code = code.to_s
     end
 

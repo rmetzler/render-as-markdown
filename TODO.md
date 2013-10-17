@@ -12,16 +12,23 @@ TODO
 - auto-numbering of headers (h2, h3, h4) so TOC works with numbers (Document walker)
 
 
+Option Hash
+-----------
+
+- an option hash could be a good thing to implement http://blog.rlmflores.me/blog/2012/07/16/method-with-options/
+
+
 Ideas for DSL
 -------------
 
-"<url>".link => create link
-"<url>".img => create image
-"<url>".ref => create reference
+```ruby
+"<url>".link   # => create link
+"<url>".img    # => create image
+"<url>".ref    # => create reference
+"markdown".tag # => create tag #markdown, should work with arrays too
+```
 
-"markdown".tag => create Tag #markdown
-
-
+```ruby
 DSL.markdown do |md|
   md.h1 "This is a title"
   md.chapter "title for chapter 1" do |c1|
@@ -30,5 +37,7 @@ DSL.markdown do |md|
     c1.list ["item 1", "item2", "item3"]
     c1.table #...
     c1.ref text, "<url>"
+    c1.code :ruby, File.open "examples/example-dsl.rb"
   end
 end # => renders title, toc, references etc
+```
