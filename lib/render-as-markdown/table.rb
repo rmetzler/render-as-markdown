@@ -24,6 +24,10 @@ module RenderAsMarkdown
 
     alias_method  '<<', :add_row
 
+
+    # SMELL: complex method #render
+    # TODO: refactor to something like act_as_array
+
     def render
       # join all column headers
       table = @columns.map(&:render_title).join( '|' ) << "\n"
@@ -39,7 +43,7 @@ module RenderAsMarkdown
       # return table
       table
     end
-    
+
     alias_method :to_s, :render
 
   end
