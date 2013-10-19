@@ -1,6 +1,9 @@
 HISTORY
 =======
 
+__[2012-10-19]__
+- refactor table.rb
+
 __[2012-10-16]__
 - Readme: what is Markdown?
 - added Link class

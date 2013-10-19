@@ -25,26 +25,34 @@ module RenderAsMarkdown
     alias_method  '<<', :add_row
 
 
-    # SMELL: complex method #render
-    # TODO: refactor to something like act_as_array
-
     def render
-      # join all column headers
-      table = @columns.map(&:render_title).join( '|' ) << "\n"
-
-      # join all column lines
-      table << @columns.map(&:render_line).join( '|' ) << "\n"
-
-      # join all columns for all rows
-      @rows.each_with_index do |row, i|
-        table << @columns.map {|col| col.render_row i}.join( '|' ) << "\n"
-      end
-
-      # return table
-      table
+      render_head << render_seperator << render_body
     end
 
     alias_method :to_s, :render
+
+    def render_head
+      # join all column headers
+      @columns.map(&:render_title).join( '|' ) << "\n"
+    end
+
+    def render_seperator
+      # join all column lines
+      @columns.map(&:render_line).join( '|' ) << "\n"
+    end
+
+    def render_body
+      # join all columns for all rows
+      body =''
+      @rows.each_with_index do |row, i|
+        body << render_row( i )
+      end
+      body
+    end
+
+    def render_row row
+      @columns.map {|col| col.render_row row}.join( '|' ) << "\n"
+    end
 
   end
 
