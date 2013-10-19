@@ -5,3 +5,6 @@ rvm:
 env:
   global:
   - secure: xzTSvaU1Bqjw00JtYU7pgx/KroxdDo3uO4DlS5CytFg1j7dk7Q52GAoDAZYZ6cKddvL2PlNwvW5fLt4qjt6ewidf8GMKAl6ktO5L4XH8hd6tHILqvSJSbX9a4HRUAzxr0qKl5cIUw9VMINTvD/drgN8uRXgPnUR6xtfTAL8dv7g=
+
+before_script:
+  - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
