@@ -1,6 +1,8 @@
 TODO
 ====
 
+- create image link (img_url, href)
+- create [Tasklists](https://help.github.com/articles/github-flavored-markdown#task-lists)
 - create TOC (table of contents) structur (see github anchor links)
 - create link references
 - create document from hash (Document)
@@ -10,6 +12,7 @@ TODO
 - include files (code, multimarkdown, version number, etc)
 - show typical Github project signs of life like travis build image, code climate, versioneye
 - auto-numbering of headers (h2, h3, h4) so TOC works with numbers (Document walker)
+- create InvoiceTable class for invoices (currency, items description, time, rate, item total, total, tax(Umsatzsteuer Germany), total+tax)
 
 
 Option Hash

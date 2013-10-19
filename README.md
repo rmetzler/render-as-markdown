@@ -1,8 +1,14 @@
 RenderAsMarkdown
 ================
 
+
 RenderAsMarkdown is a small Ruby gem featuring simple to use classes to turn
 data into Markdown.
+
+[![Build Status](https://travis-ci.org/rmetzler/render-as-markdown.png?branch=master)](https://travis-ci.org/rmetzler/render-as-markdown)
+[![Code Climate](https://codeclimate.com/github/rmetzler/render-as-markdown.png)](https://codeclimate.com/github/rmetzler/render-as-markdown)
+[![Gem Version](https://badge.fury.io/rb/render-as-markdown.png)](http://badge.fury.io/rb/render-as-markdown)
+[![Dependency Status](https://gemnasium.com/rmetzler/render-as-markdown.png)](https://gemnasium.com/rmetzler/render-as-markdown)
 
 This project started when [rmetzler](//github.com/rmetzler) tried to render
 data into a Markdown table. While this was easy to achive with templating, a
