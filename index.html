@@ -28,37 +28,114 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+          <h1>
+<a name="renderasmarkdown" class="anchor" href="#renderasmarkdown"><span class="octicon octicon-link"></span></a>RenderAsMarkdown</h1>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<p>RenderAsMarkdown is a small Ruby gem featuring simple to use classes to turn
+data into Markdown.</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
+<p><a href="http://badge.fury.io/rb/render-as-markdown"><img src="https://badge.fury.io/rb/render-as-markdown.png" alt="Gem Version"></a>
+<a href="https://travis-ci.org/rmetzler/render-as-markdown"><img src="https://travis-ci.org/rmetzler/render-as-markdown.png?branch=master" alt="Build Status"></a>
+<a href="https://codeclimate.com/github/rmetzler/render-as-markdown"><img src="https://codeclimate.com/github/rmetzler/render-as-markdown.png" alt="Code Climate"></a>
+<a href="https://coveralls.io/r/rmetzler/render-as-markdown"><img src="https://coveralls.io/repos/rmetzler/render-as-markdown/badge.png" alt="Coverage Status"></a>
+<a href="https://gemnasium.com/rmetzler/render-as-markdown"><img src="https://gemnasium.com/rmetzler/render-as-markdown.png" alt="Dependency Status"></a></p>
+
+<p>This project started when <a href="//github.com/rmetzler">rmetzler</a> tried to render
+data into a Markdown table. While this was easy to achive with templating, a
+dedicated helper gem was more reuseable and produced output that was also
+easier to scan in ASCII.</p>
+
+<p>Ultimately this helper should turn into something like a DSL to create and
+scaffold Markdown documents. In particular it should be very useful to create
+project documentation files like README.md, TODO.md, LICENSE.md, etc. with it.
+Github is able to render Markdown as HTML so automatically generated project
+documentation could be displayed on <a href="http://github.com">http://github.com</a></p>
+
+<p>See <a href="#implementation">Implementation</a> for what's implemented yet.</p>
+
+<h2>
+<a name="what-is-markdown" class="anchor" href="#what-is-markdown"><span class="octicon octicon-link"></span></a>What is Markdown?</h2>
+
+<p>Markdown is a (supposed to be) simple markup language that can be written and
+converted into HTML easily.</p>
+
+<p>It was <a href="http://daringfireball.net/projects/markdown/">created by John Gruber in December 2004</a>
+and has grown in popularity since. Developers started to adapt Markdown and
+several different Markdown dialects emerged:</p>
+
+<ul>
+<li><a href="http://daringfireball.net/projects/markdown/syntax">Original Markdown Syntax</a></li>
+<li><a href="http://github.github.com/github-flavored-markdown/">Github created Github flavored Markdown</a></li>
+<li><a href="http://fletcherpenney.net/multimarkdown/">MultiMarkdown adds features for multiple files</a></li>
+<li><a href="http://support.iawriter.com/help/kb/general-questions/markdown-syntax-reference-guide">iA Writer uses a slightly different dialect</a></li>
+</ul><h2>
+<a name="implementation" class="anchor" href="#implementation"><span class="octicon octicon-link"></span></a>Implementation</h2>
+
+<h3>
+<a name="headers" class="anchor" href="#headers"><span class="octicon octicon-link"></span></a>Headers</h3>
+
+<p>Headers in Markdown can be written in two different notations. the #-Notation
+where you just prepend # for H1, ## for H2, ### for H3 ... up to H5.
+You get the concept.</p>
+
+<p>And there is the underline Notation for H1 (===) and H2 (---). This notation
+is easier to scan in ASCII files, but its not as simple to implement in
+Markdown templates as the #-notation is. So I wrote two little helpers classes.</p>
+
+<h3>
+<a name="link" class="anchor" href="#link"><span class="octicon octicon-link"></span></a>Link</h3>
+
+<p>Links in Markdown have a URL, text (optional) and hint (optional).</p>
+
+<h3>
+<a name="image" class="anchor" href="#image"><span class="octicon octicon-link"></span></a>Image</h3>
+
+<p>Images in Markdown have a URL, an alt text and a hint (optional).</p>
+
+<h3>
+<a name="list" class="anchor" href="#list"><span class="octicon octicon-link"></span></a>List</h3>
+
+<p>Lists in Markdown start with a dash and a space in every line.</p>
+
+<h3>
+<a name="code" class="anchor" href="#code"><span class="octicon octicon-link"></span></a>Code</h3>
+
+<p>There are different notations for Code in Markdown.
+Currently the implementation just indent every line by 4 spaces.</p>
+
+<h3>
+<a name="table" class="anchor" href="#table"><span class="octicon octicon-link"></span></a>Table</h3>
+
+<p>It's really easy to render a table in (GHf)MD, but the simplest approach
+doesn't look that nice in raw mode. That's why there is this simple class,
+tables work in the terminal AND on Github.</p>
+
+<div class="highlight highlight-Ruby"><pre>    <span class="n">t</span> <span class="o">=</span> <span class="ss">RenderMarkdown</span><span class="p">:</span><span class="ss">:Table</span><span class="o">.</span><span class="n">new</span> <span class="sx">%w{eins zwei superkalifrageristric}</span>
+    <span class="n">t</span> <span class="o">&lt;&lt;</span> <span class="sx">%w{hoch-soll-er-leben 3 mal-hoch}</span>
+    <span class="nb">puts</span> <span class="n">t</span><span class="o">.</span><span class="n">render</span>
+</pre></div>
+
+<p>renders the following table</p>
+
+<pre><code>    eins              |zwei|superkalifrageristric
+    ------------------|----|---------------------
+    hoch-soll-er-leben|3   |mal-hoch
 </code></pre>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
+<p>Thanks to Github, this is also rendered in HTML. Nice!</p>
 
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<table>
+<thead><tr>
+<th>eins</th>
+<th>zwei</th>
+<th>superkalifrageristric</th>
+</tr></thead>
+<tbody><tr>
+<td>hoch-soll-er-leben</td>
+<td>3</td>
+<td>mal-hoch</td>
+</tr></tbody>
+</table>
         </section>
 
         <aside id="sidebar">
