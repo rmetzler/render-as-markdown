@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+git checkout gh-pages
+git pull origin gh-pages
+git checkout master README.md
+rake readme_to_ghpage
+git commit -am"update gh-pages with README.md"
+git push origin gh-pages
+git checkout master
