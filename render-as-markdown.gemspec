@@ -23,7 +23,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'minitest'
   gem.add_development_dependency 'minitest-reporters'
   # gem.add_development_dependency 'sandi_meter'
-  gem.add_development_dependency 'tilt'
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
