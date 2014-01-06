@@ -23,7 +23,8 @@ project documentation files like README.md, TODO.md, LICENSE.md, etc. with it.
 Github is able to render Markdown as HTML so automatically generated project
 documentation could be displayed on http://github.com
 
-See [Implementation](#implementation) for what's implemented yet.
+- See [Implementation](#implementation) for what's implemented yet.
+- See [Getting started](#getting-started) if you want to hack on it.
 
 
 What is Markdown?
@@ -69,6 +70,15 @@ Images in Markdown have a URL, an alt text and a hint (optional).
 
 Lists in Markdown start with a dash and a space in every line.
 
+#### Todo List
+
+Items of Todo-Lists in GFM start like this
+```md
+- [ ] this task isn't done yet
+- [x] this task is done
+```
+
+The `done` version isn't implemented yet.
 
 ### Code
 
@@ -101,3 +111,12 @@ Thanks to Github, this is also rendered in HTML. Nice!
 eins              |zwei|superkalifrageristric
 ------------------|----|---------------------
 hoch-soll-er-leben|3   |mal-hoch
+
+
+Getting started
+---------------
+
+#### run tests
+```sh
+$ bundle exec rake test
+```

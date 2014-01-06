@@ -14,6 +14,7 @@ module RenderAsMarkdown
     end
 
     alias_method  '<<', :add_list_item
+    alias_method  :add_item, :add_list_item
 
     def render
       md = ''
